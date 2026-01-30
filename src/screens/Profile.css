@@ -1,0 +1,130 @@
+.profile-screen {
+    background-color: var(--zomato-light-gray);
+    min-height: 100vh;
+    padding-bottom: 80px;
+}
+
+.no-border {
+    border-bottom: none !important;
+}
+
+.profile-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.profile-name {
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--zomato-dark);
+}
+
+.profile-membership {
+    font-size: 14px;
+    color: var(--zomato-gray);
+}
+
+.profile-img-box {
+    width: 60px;
+    height: 60px;
+    background: var(--zomato-red);
+    color: white;
+    font-size: 24px;
+    font-weight: 700;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-content {
+    padding: var(--spacing-md);
+}
+
+.profile-stats-container {
+    display: flex;
+    background: white;
+    padding: 20px;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+}
+
+.p-stat {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-right: 1px solid var(--border-light);
+}
+
+.p-stat:last-child {
+    border-right: none;
+}
+
+.p-stat-val {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--zomato-dark);
+}
+
+.p-stat-label {
+    font-size: 12px;
+    color: var(--zomato-gray);
+}
+
+/* Menu Items */
+.profile-menu {
+    background: white;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+}
+
+.menu-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+    border-bottom: 1px solid var(--border-light);
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.menu-item:last-child {
+    border-bottom: none;
+}
+
+.menu-item:active {
+    background: #f9f9f9;
+}
+
+.menu-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.menu-icon {
+    width: 20px;
+    height: 20px;
+    color: var(--zomato-dark);
+}
+
+.arrow-icon {
+    width: 20px;
+    height: 20px;
+    color: var(--zomato-gray);
+}
+
+.danger-icon {
+    color: var(--zomato-red) !important;
+}
+
+.danger-text {
+    color: var(--zomato-red);
+    font-weight: 600;
+}
+
+.shadow-sm {
+    box-shadow: var(--shadow-sm);
+}

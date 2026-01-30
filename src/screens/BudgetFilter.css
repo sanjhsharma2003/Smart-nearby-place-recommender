@@ -1,0 +1,108 @@
+.budget-screen {
+    background-color: var(--zomato-white);
+    min-height: 100vh;
+}
+
+.flex-align {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.back-btn {
+    background: none;
+    border: none;
+    width: 24px;
+    height: 24px;
+    color: var(--zomato-dark);
+    padding: 0;
+    cursor: pointer;
+}
+
+.filter-content {
+    padding: var(--spacing-lg) var(--spacing-md);
+}
+
+.filter-label {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--zomato-dark);
+    margin-bottom: 16px;
+}
+
+.budget-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.budget-chip {
+    padding: 10px 16px;
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-full);
+    background: white;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--zomato-gray);
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.budget-chip.active {
+    background: var(--zomato-red);
+    color: white;
+    border-color: var(--zomato-red);
+}
+
+.flex-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.filter-desc {
+    font-size: 13px;
+    color: var(--zomato-gray);
+}
+
+/* Zomato Toggle */
+.z-toggle {
+    width: 44px;
+    height: 24px;
+    background: #E8E8E8;
+    border-radius: var(--radius-full);
+    position: relative;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.z-toggle.active {
+    background: var(--zomato-green);
+}
+
+.toggle-thumb {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 20px;
+    height: 20px;
+    background: white;
+    border-radius: 50%;
+    transition: left 0.2s;
+}
+
+.z-toggle.active .toggle-thumb {
+    left: 22px;
+}
+
+.filter-footer {
+    position: fixed;
+    bottom: 20px;
+    left: 16px;
+    right: 16px;
+}
+
+.full-width {
+    width: 100%;
+}
