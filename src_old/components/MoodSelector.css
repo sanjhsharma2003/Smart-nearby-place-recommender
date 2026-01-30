@@ -1,0 +1,199 @@
+.mood-selector {
+    width: 100%;
+    padding: var(--spacing-xl) 0;
+}
+
+.mood-header {
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+    animation: fadeIn 0.8s ease-out;
+}
+
+.mood-title {
+    font-size: clamp(2rem, 4vw, 2.5rem);
+    font-weight: 800;
+    margin-bottom: var(--spacing-sm);
+    background: linear-gradient(135deg, #667eea 0%, #f093fb 50%, #4facfe 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.mood-subtitle {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    font-weight: 400;
+}
+
+.mood-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-md);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Mood Card */
+.mood-card {
+    position: relative;
+    cursor: pointer;
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    animation: scaleIn 0.5s ease-out backwards;
+    transition: all var(--transition-normal);
+}
+
+.mood-card-inner {
+    position: relative;
+    background: var(--card-bg);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 2px solid var(--card-border);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-xl) var(--spacing-md);
+    text-align: center;
+    transition: all var(--transition-normal);
+    min-height: 220px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+
+/* Animated Background */
+.mood-card-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--mood-gradient);
+    opacity: 0;
+    transition: opacity var(--transition-normal);
+    z-index: -1;
+}
+
+/* Hover Effects */
+.mood-card:hover {
+    transform: translateY(-8px) scale(1.02);
+}
+
+.mood-card:hover .mood-card-inner {
+    border-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+}
+
+.mood-card:hover .mood-card-bg {
+    opacity: 0.15;
+}
+
+.mood-card:hover .mood-emoji {
+    transform: scale(1.2) rotate(10deg);
+}
+
+/* Active State */
+.mood-card.active .mood-card-inner {
+    border-color: rgba(255, 255, 255, 0.5);
+    box-shadow: 0 0 40px rgba(102, 126, 234, 0.4);
+}
+
+.mood-card.active .mood-card-bg {
+    opacity: 0.25;
+}
+
+.mood-card.active .mood-emoji {
+    transform: scale(1.15);
+    animation: pulse 2s ease-in-out infinite;
+}
+
+/* Emoji */
+.mood-emoji {
+    font-size: 4rem;
+    margin-bottom: var(--spacing-sm);
+    transition: all var(--transition-normal);
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+}
+
+/* Card Title */
+.mood-card-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-xs);
+    font-family: var(--font-display);
+}
+
+/* Card Description */
+.mood-card-description {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    font-weight: 400;
+    margin: 0;
+}
+
+/* Selection Indicator */
+.mood-selected-indicator {
+    position: absolute;
+    top: var(--spacing-sm);
+    right: var(--spacing-sm);
+    width: 40px;
+    height: 40px;
+    background: var(--mood-gradient);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: scaleIn 0.3s ease-out;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.mood-selected-indicator svg {
+    animation: checkmark 0.4s ease-out;
+}
+
+@keyframes checkmark {
+    0% {
+        stroke-dasharray: 0, 100;
+    }
+
+    100% {
+        stroke-dasharray: 100, 0;
+    }
+}
+
+/* Click Animation */
+.mood-card:active {
+    transform: scale(0.98);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .mood-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-sm);
+    }
+
+    .mood-card-inner {
+        padding: var(--spacing-md);
+        min-height: 180px;
+    }
+
+    .mood-emoji {
+        font-size: 3rem;
+    }
+
+    .mood-card-title {
+        font-size: 1.25rem;
+    }
+
+    .mood-card-description {
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .mood-grid {
+        grid-template-columns: 1fr;
+    }
+}
